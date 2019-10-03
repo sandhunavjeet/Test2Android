@@ -1,9 +1,10 @@
 package com.example.test2android;
 
 import android.graphics.Point;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
