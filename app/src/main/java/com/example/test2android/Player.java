@@ -1,6 +1,5 @@
 package com.example.test2android;
 
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -21,7 +20,7 @@ public class Player {
         this.yPosition = y;
 
         // 2. Set the default image - all enemies have same image
-        this.image = BitmapFactory.decodeResource(context.getResources(), R.drawable.player_ship);
+        this.image = BitmapFactory.decodeResource(context.getResources(), R.drawable.dino64);
 
         // 3. Set the default hitbox - all enemies have same hitbox
         this.hitbox = new Rect(
@@ -31,7 +30,13 @@ public class Player {
                 this.yPosition + this.image.getHeight()
         );
     }
-
+    public void updateHitbox() {
+        // update the position of the hitbox
+        this.hitbox.top = this.yPosition;
+        this.hitbox.left = this.xPosition;
+        this.hitbox.right = this.xPosition + this.image.getWidth();
+        this.hitbox.bottom = this.yPosition + this.image.getHeight();
+    }
 
     // GETTER AND SETTER METHODS
     public Bitmap getImage() {
@@ -56,6 +61,7 @@ public class Player {
 
     public void setxPosition(int xPosition) {
         this.xPosition = xPosition;
+        this.updateHitbox();
     }
 
     public int getyPosition() {
@@ -64,5 +70,7 @@ public class Player {
 
     public void setyPosition(int yPosition) {
         this.yPosition = yPosition;
+        this.updateHitbox();
     }
 }
+
