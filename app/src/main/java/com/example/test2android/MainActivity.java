@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+
     GameEngine tappySpaceship;
 
     @Override
@@ -41,5 +42,3 @@ public class MainActivity extends AppCompatActivity {
         tappySpaceship.pauseGame();
     }
 }
-
-
